@@ -30,6 +30,9 @@ else
   setPublicVar CI_COMMIT "$CIRCLE_SHA1";
   # `CI_COMMIT_RANGE` is only used on push builds (a.k.a. non-PR, non-scheduled builds and rerun
   # workflows of such builds).
+
+  setPublicVar CI_GIT_BRANCH "${CIRCLE_GIT_BRANCH}";
+  setPublicVar CI_GIT_TAG "${CIRCLE_GIT_TAG}";
   setPublicVar CI_GIT_BASE_REVISION "${CIRCLE_GIT_BASE_REVISION}";
   setPublicVar CI_GIT_REVISION "${CIRCLE_GIT_REVISION}";
   setPublicVar CI_COMMIT_RANGE "$CIRCLE_GIT_BASE_REVISION..$CIRCLE_GIT_REVISION";
